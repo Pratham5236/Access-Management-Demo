@@ -29,15 +29,19 @@ export const loginOidc = async (
     const codeVerifier = oidc.randomPKCECodeVerifier();
     const codeChallenge = await oidc.calculatePKCECodeChallenge(codeVerifier);
 
+    const state = oidc.randomState();
+
     const parameters: Record<string, string> = {
       redirect_uri: oidcConfig.redirectUri,
       scope: 'openid profile email',
       code_challenge: codeChallenge,
       code_challenge_method: 'S256',
+      state,
     };
 
-    const state = oidc.randomState();
-    parameters.state = state;
+    if (typeof req.query.idp === 'string') {
+      parameters.kc_idp_hint = req.query.idp;
+    }
 
     req.session.oidc = {
       codeVerifier,

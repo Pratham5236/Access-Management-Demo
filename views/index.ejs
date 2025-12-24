@@ -4,7 +4,7 @@
     <div class="col-md-8 text-center">
         <h1 class="display-4 mb-4">Welcome</h1>
         <p class="lead text-muted">Select an authentication method to continue.</p>
-        
+
         <div class="d-grid gap-3 col-md-6 mx-auto mt-5">
             <% if (!user && !oidcUser && !uaePassUser) { %>
                 <a href="/login" class="btn btn-primary btn-lg shadow-sm">
@@ -12,9 +12,6 @@
                 </a>
                 <a href="/login/oidc" class="btn btn-outline-primary btn-lg shadow-sm">
                     Log in with OIDC
-                </a>
-                <a href="/login/uaepass" class="btn btn-dark btn-lg shadow-sm">
-                    Log in with UAE Pass
                 </a>
             <% } else { %>
                 <div class="alert alert-success">
