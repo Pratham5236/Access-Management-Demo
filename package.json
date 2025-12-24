@@ -1,0 +1,29 @@
+{
+  "name": "app",
+  "module": "src/server.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun src/server.ts",
+    "dev": "bun --watch src/server.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "@types/express-session": "^1.18.2",
+    "@types/passport": "^1.0.17",
+    "@types/passport-saml": "^1.1.7",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "openid-client": "^6.8.1",
+    "passport": "^0.7.0",
+    "passport-saml": "^3.2.4"
+  }
+}
