@@ -2,12 +2,16 @@
 
 Auth demo for technical assessment
 
-## Features
+## Overall System
 
-- **SAML 2.0**: Integration using `passport-saml`.
-- **OIDC (OpenID Connect)**: Integration using `openid-client` with PKCE.
-- **UAE Pass**: OAuth 2.0 implementation with UAE Pass.
-- **User Federation**: Works with Keycloak linked to local LDAP (Only for SAML and IODC; separate instance).
+<img width="1109" height="1368" alt="Authentication App Demo" src="https://github.com/user-attachments/assets/cbb7583a-8e06-4a41-a74b-e3f3621396ef" />
+
+## Authentication Flows
+
+- **SAML**: `/login` -> Redirects to Keycloak SAML -> `/login/callback`.
+- **OIDC**: `/login/oidc` -> PKCE Challenge -> Keycloak OIDC -> `/oidc/callback`.
+- **UAE Pass**: `/login/uaepass` -> UAE Pass Staging -> `/login/uaepass/callback`.
+- **Logout**: `/logout` -> Clears local session and Passport authentication.
 
 ## Setup
 
@@ -39,10 +43,3 @@ Auth demo for technical assessment
    # Production
    bun start
    ```
-
-## Authentication Flows
-
-- **SAML**: `/login` -> Redirects to Keycloak SAML -> `/login/callback`.
-- **OIDC**: `/login/oidc` -> PKCE Challenge -> Keycloak OIDC -> `/oidc/callback`.
-- **UAE Pass**: `/login/uaepass` -> UAE Pass Staging -> `/login/uaepass/callback`.
-- **Logout**: `/logout` -> Clears local session and Passport authentication.
