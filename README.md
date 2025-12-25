@@ -19,17 +19,24 @@ Auth demo for technical assessment
 2. **Environment Variables**:
    ```env
    KEYCLOAK_ISSUER=http://localhost:8080/realms/demo-realm
-   OIDC_CLIENT_ID=your_oidc_client_id
-   OIDC_CLIENT_SECRET=your_oidc_secret
+   OIDC_CLIENT_ID=XXXXXXXXX
+   OIDC_CLIENT_SECRET=XXXXXXXX
    OIDC_REDIRECT_URI=http://localhost:3000/oidc/callback
    ```
+   
+   ```env
+   KEYCLOAK_ISSUER=https://auth.pratham.cloud/realms/demo-realm
+   OIDC_CLIENT_ID=XXXXXXXXX
+   OIDC_CLIENT_SECRET=XXXXXXXX
+   OIDC_REDIRECT_URI=https://demo-app.pratham.cloud/oidc/callback
+   ```
 
-3. **Run the App**:
+3. **Runing**:
    ```bash
-   # Development mode
+   # Development
    bun dev
 
-   # Production mode
+   # Production
    bun start
    ```
 
